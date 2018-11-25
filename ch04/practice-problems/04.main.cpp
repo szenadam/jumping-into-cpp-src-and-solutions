@@ -4,7 +4,6 @@
 using namespace std;
 
 int main() {
-
     string username, password;
 
     cout << "Enter username: "; cin >> username;
