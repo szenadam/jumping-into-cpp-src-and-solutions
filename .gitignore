@@ -1,2 +1,6 @@
-*.exe
+# IDE files/folders
 .vscode
+
+# Output files
+*.exe
+*.out
