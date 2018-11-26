@@ -1,5 +1,5 @@
 CC=g++
-CFLAGS=-Wall
+CFLAGS=-W -Werror -Wall
 
 ifeq ($(shell echo "check_quotes"),"check_quotes")
 EXTENSION := ""
@@ -52,6 +52,7 @@ all:
 
 	$(CC) $(CFLAGS) ./ch09/sample-codes/01.main.cpp -o ch09-01$(EXTENSION)
 	$(CC) $(CFLAGS) ./ch09/sample-codes/02.main.cpp -o ch09-02$(EXTENSION)
+	$(CC) $(CFLAGS) ./ch09/practice-problems/01.main.cpp -o pp09-01$(EXTENSION)
 
 clean:
 	rm *.exe
