@@ -38,6 +38,8 @@ bool checkPlayerTwoWin(int board[][3], int size) {
     return false;
 }
 
+// TODO implement function if the game is a tie
+
 void fillPlace(int array[][3], int x, int y, int value) {
     array[x][y] = value;
 }
