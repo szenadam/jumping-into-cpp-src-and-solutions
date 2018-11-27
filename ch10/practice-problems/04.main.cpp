@@ -2,7 +2,7 @@
 
 using namespace std;
 
-bool checkPlayerOneWin(int board[][3], int size) { // TODO refactor: use only one function with lesser checks (use loop)
+bool checkPlayerOneWin(int board[][3]) { // TODO refactor: use only one function with lesser checks (use loop)
     // horizontal
     if (board[0][0] == 1 && board[0][1] == 1 && board[0][2] == 1) return true;
     if (board[1][0] == 1 && board[1][1] == 1 && board[1][2] == 1) return true;
@@ -20,7 +20,7 @@ bool checkPlayerOneWin(int board[][3], int size) { // TODO refactor: use only on
     return false;
 }
 
-bool checkPlayerTwoWin(int board[][3], int size) {
+bool checkPlayerTwoWin(int board[][3]) {
     // horizontal
     if (board[0][0] == 2 && board[0][1] == 2 && board[0][2] == 2) return true;
     if (board[1][0] == 2 && board[1][1] == 2 && board[1][2] == 2) return true;
@@ -86,10 +86,10 @@ int main() {
         playerOnesTurn = !playerOnesTurn;
         
         printBoard(board, 3);
-        if (checkPlayerOneWin(board, 3)) {
+        if (checkPlayerOneWin(board)) {
             cout << "Player 1 has won\n";
             break;
-        } else if (checkPlayerTwoWin(board, 3)) {
+        } else if (checkPlayerTwoWin(board)) {
             cout << "Player 2 has won\n";
             break;
         }
