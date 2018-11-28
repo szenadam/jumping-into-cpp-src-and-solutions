@@ -65,6 +65,7 @@ all:
 	$(CC) $(CFLAGS) ./ch11/practice-problems/01.main.cpp -o pp11-01$(EXTENSION)
 
 	$(CC) $(CFLAGS) ./ch13/sample-codes/01.main.cpp -o ch13-01$(EXTENSION)
+	$(CC) $(CFLAGS) ./ch13/sample-codes/02.main.cpp -o ch13-02$(EXTENSION)
 
 
 clean:
