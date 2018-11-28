@@ -14,8 +14,9 @@ bool checkWin(int board[][3], int player) {
     }
 
     // diagonal
-    if (board[0][0] == player && board[1][1] == player && board[2][2] == player) return true;
-    if (board[0][2] == player && board[1][1] == player && board[2][0] == player) return true;
+    if ((board[0][0] == player && board[1][1] == player && board[2][2] == player) ||
+        (board[0][2] == player && board[1][1] == player && board[2][0] == player)) 
+        return true;
     
     return false;
 }
@@ -23,7 +24,13 @@ bool checkWin(int board[][3], int player) {
 // TODO implement function if the game is a tie
 
 bool fillPlace(int array[][3], int x, int y, int value) {
-    if (array[x][y] != 0) {
+    if (x > 2 || x < 0) {
+        cout << "Invalid x coordinate. Try again.\n";
+        return false;
+    } else if (y > 2 || y < 0) {
+        cout << "Invalid y coordinate. Try again.\n";
+        return false;
+    } else if (array[x][y] != 0) {
         cout << "Place is already filled. Try again.\n";
         return false;
     } else {
@@ -64,13 +71,13 @@ int main() {
         if (playerOnesTurn) {            
             cout << "Player 1's turn" << endl;
             do {
-                cout << "Enter x coordinate: "; cin >> x; // TODO validate input
+                cout << "Enter x coordinate: "; cin >> x;
                 cout << "Enter y coordinate: "; cin >> y;
             } while (!fillPlace(board, x, y, 1));
         } else {
             cout << "Player 2's turn" << endl;
             do {
-                cout << "Enter x coordinate: "; cin >> x; // TODO validate input
+                cout << "Enter x coordinate: "; cin >> x;
                 cout << "Enter y coordinate: "; cin >> y;
             } while (!fillPlace(board, x, y, 2));
         }
