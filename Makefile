@@ -64,6 +64,8 @@ all:
 	$(CC) $(CFLAGS) ./ch11/sample-codes/01.main.cpp -o ch11-01$(EXTENSION)
 	$(CC) $(CFLAGS) ./ch11/practice-problems/01.main.cpp -o pp11-01$(EXTENSION)
 
+	$(CC) $(CFLAGS) ./ch13/sample-codes/01.main.cpp -o ch13-01$(EXTENSION)
+
 
 clean:
 	rm *.exe

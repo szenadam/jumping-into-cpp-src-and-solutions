@@ -21,7 +21,7 @@ bool checkWin(int board[][3], int player) {
     return false;
 }
 
-// TODO implement function if the game is a tie
+// TODO implement function if the game is a tie before last move
 
 bool fillPlace(int board[][3], int x, int y, int value) {
     if (x > 2 || x < 0) {
