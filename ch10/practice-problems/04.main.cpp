@@ -23,39 +23,49 @@ bool checkWin(int board[][3], int player) {
 
 // TODO implement function if the game is a tie
 
-bool fillPlace(int array[][3], int x, int y, int value) {
+bool fillPlace(int board[][3], int x, int y, int value) {
     if (x > 2 || x < 0) {
         cout << "Invalid x coordinate. Try again.\n";
         return false;
     } else if (y > 2 || y < 0) {
         cout << "Invalid y coordinate. Try again.\n";
         return false;
-    } else if (array[x][y] != 0) {
+    } else if (board[x][y] != 0) {
         cout << "Place is already filled. Try again.\n";
         return false;
     } else {
-        array[x][y] = value;
+        board[x][y] = value;
         return true;
     }
 }
 
-void initBoard(int array[][3], int size) {
+void initBoard(int board[][3], int size) {
     for (int i = 0; i < size; i++) {
         for (int j = 0; j < 3; j++) {
-            array[i][j] = 0;
+            board[i][j] = 0;
         }
     }
 }
 
-void printBoard(int array[][3], int size) {
+void printBoard(int board[][3], int size) {
     cout << "-----" << endl;
     for (int i = 0; i < size; i++) {
         for (int j = 0; j < 3; j++) {
-            cout << array[i][j] << " ";
+            cout << board[i][j] << " ";
         }
         cout << endl;
     }
     cout << "-----" << endl;
+}
+
+bool isBoardFilled(int board[][3]) {
+    bool isFilled = true;
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            if (board[i][j] == 0) isFilled = false;
+        }
+    }
+    return isFilled;
 }
 
 int main() {
@@ -83,6 +93,11 @@ int main() {
         }
         playerOnesTurn = !playerOnesTurn;
         
+        if (isBoardFilled(board)) {
+            cout << "The game is a tie.\n";
+            break;
+        }
+
         printBoard(board, 3);
         if (checkWin(board, 1)) {
             cout << "Player 1 has won\n";
