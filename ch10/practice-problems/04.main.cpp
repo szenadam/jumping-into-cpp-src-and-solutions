@@ -4,14 +4,14 @@ using namespace std;
 
 bool checkPlayerOneWin(int board[][3]) { // TODO refactor: use only one function with lesser checks (use loop)
     // horizontal
-    if (board[0][0] == 1 && board[0][1] == 1 && board[0][2] == 1) return true;
-    if (board[1][0] == 1 && board[1][1] == 1 && board[1][2] == 1) return true;
-    if (board[2][0] == 1 && board[2][1] == 1 && board[2][2] == 1) return true;
+    for (int i = 0; i < 3; i++) {
+        if (board[i][0] == 1 && board[i][1] == 1 && board[i][2] == 1) return true;
+    }
 
     // vertical
-    if (board[0][0] == 1 && board[1][0] == 1 && board[2][0] == 1) return true;
-    if (board[0][1] == 1 && board[1][1] == 1 && board[2][1] == 1) return true;
-    if (board[0][2] == 1 && board[1][2] == 1 && board[2][2] == 1) return true;
+    for (int i = 0; i < 3; i++) {
+        if (board[0][i] == 1 && board[1][i] == 1 && board[2][i] == 1) return true;
+    }
 
     // diagonal
     if (board[0][0] == 1 && board[1][1] == 1 && board[2][2] == 1) return true;
@@ -22,14 +22,14 @@ bool checkPlayerOneWin(int board[][3]) { // TODO refactor: use only one function
 
 bool checkPlayerTwoWin(int board[][3]) {
     // horizontal
-    if (board[0][0] == 2 && board[0][1] == 2 && board[0][2] == 2) return true;
-    if (board[1][0] == 2 && board[1][1] == 2 && board[1][2] == 2) return true;
-    if (board[2][0] == 2 && board[2][1] == 2 && board[2][2] == 2) return true;
+    for (int i = 0; i < 3; i++) {
+        if (board[i][0] == 1 && board[i][1] == 1 && board[i][2] == 1) return true;
+    }
 
     // vertical
-    if (board[0][0] == 2 && board[1][0] == 2 && board[2][0] == 2) return true;
-    if (board[0][1] == 2 && board[1][1] == 2 && board[2][1] == 2) return true;
-    if (board[0][2] == 2 && board[1][2] == 2 && board[2][2] == 2) return true;
+    for (int i = 0; i < 3; i++) {
+        if (board[0][i] == 1 && board[1][i] == 1 && board[2][i] == 1) return true;
+    }
 
     // diagonal
     if (board[0][0] == 2 && board[1][1] == 2 && board[2][2] == 2) return true;
@@ -53,6 +53,7 @@ void initBoard(int array[][3], int size) {
 }
 
 void printBoard(int array[][3], int size) {
+    cout << "-----" << endl;
     for (int i = 0; i < size; i++) {
         for (int j = 0; j < 3; j++) {
             cout << array[i][j] << " ";
