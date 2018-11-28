@@ -2,38 +2,20 @@
 
 using namespace std;
 
-bool checkPlayerOneWin(int board[][3]) { // TODO refactor: use only one function with lesser checks (use loop)
+bool checkWin(int board[][3], int player) {
     // horizontal
     for (int i = 0; i < 3; i++) {
-        if (board[i][0] == 1 && board[i][1] == 1 && board[i][2] == 1) return true;
+        if (board[i][0] == player && board[i][1] == player && board[i][2] == player) return true;
     }
 
     // vertical
     for (int i = 0; i < 3; i++) {
-        if (board[0][i] == 1 && board[1][i] == 1 && board[2][i] == 1) return true;
+        if (board[0][i] == player && board[1][i] == player && board[2][i] == player) return true;
     }
 
     // diagonal
-    if (board[0][0] == 1 && board[1][1] == 1 && board[2][2] == 1) return true;
-    if (board[0][2] == 1 && board[1][1] == 1 && board[2][0] == 1) return true;
-    
-    return false;
-}
-
-bool checkPlayerTwoWin(int board[][3]) {
-    // horizontal
-    for (int i = 0; i < 3; i++) {
-        if (board[i][0] == 1 && board[i][1] == 1 && board[i][2] == 1) return true;
-    }
-
-    // vertical
-    for (int i = 0; i < 3; i++) {
-        if (board[0][i] == 1 && board[1][i] == 1 && board[2][i] == 1) return true;
-    }
-
-    // diagonal
-    if (board[0][0] == 2 && board[1][1] == 2 && board[2][2] == 2) return true;
-    if (board[0][2] == 2 && board[1][1] == 2 && board[2][0] == 2) return true;
+    if (board[0][0] == player && board[1][1] == player && board[2][2] == player) return true;
+    if (board[0][2] == player && board[1][1] == player && board[2][0] == player) return true;
     
     return false;
 }
@@ -87,10 +69,10 @@ int main() {
         playerOnesTurn = !playerOnesTurn;
         
         printBoard(board, 3);
-        if (checkPlayerOneWin(board)) {
+        if (checkWin(board, 1)) {
             cout << "Player 1 has won\n";
             break;
-        } else if (checkPlayerTwoWin(board)) {
+        } else if (checkWin(board, 2)) {
             cout << "Player 2 has won\n";
             break;
         }
