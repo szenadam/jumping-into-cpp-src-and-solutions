@@ -22,8 +22,14 @@ bool checkWin(int board[][3], int player) {
 
 // TODO implement function if the game is a tie
 
-void fillPlace(int array[][3], int x, int y, int value) {
-    array[x][y] = value;
+bool fillPlace(int array[][3], int x, int y, int value) {
+    if (array[x][y] != 0) {
+        cout << "Place is already filled. Try again.\n";
+        return false;
+    } else {
+        array[x][y] = value;
+        return true;
+    }
 }
 
 void initBoard(int array[][3], int size) {
@@ -55,16 +61,18 @@ int main() {
     while (true) {
         int x, y;
         
-        if (playerOnesTurn) {
+        if (playerOnesTurn) {            
             cout << "Player 1's turn" << endl;
-            cout << "Enter x coordinate: "; cin >> x; // TODO validate input
-            cout << "Enter y coordinate: "; cin >> y;
-            fillPlace(board, x, y, 1); // TODO incorrect move if place is already filled
+            do {
+                cout << "Enter x coordinate: "; cin >> x; // TODO validate input
+                cout << "Enter y coordinate: "; cin >> y;
+            } while (!fillPlace(board, x, y, 1));
         } else {
             cout << "Player 2's turn" << endl;
-            cout << "Enter x coordinate: "; cin >> x;
-            cout << "Enter y coordinate: "; cin >> y;
-            fillPlace(board, x, y, 2);
+            do {
+                cout << "Enter x coordinate: "; cin >> x; // TODO validate input
+                cout << "Enter y coordinate: "; cin >> y;
+            } while (!fillPlace(board, x, y, 2));
         }
         playerOnesTurn = !playerOnesTurn;
         
