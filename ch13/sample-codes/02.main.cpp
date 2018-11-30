@@ -22,6 +22,6 @@ int main() {
     cout << x << " " << y << '\n';
     swap2(&x, &y);
     cout << x << " " << y << '\n';
-    
+
     return 0;
 }
