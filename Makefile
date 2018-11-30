@@ -62,6 +62,7 @@ all:
 	$(CC) $(CFLAGS) ./ch13/sample-codes/02.main.cpp -o ch13-02
 	$(CC) $(CFLAGS) ./ch13/practice-problems/01.main.cpp -o ch13-01
 
+	$(CC) $(CFLAGS) ./ch14/sample-codes/01.main.cpp -o ch14-01
 
 clean:
 	rm *.exe
