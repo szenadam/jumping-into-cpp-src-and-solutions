@@ -72,7 +72,7 @@ ch11:
 ch13:
 	$(CC) $(CFLAGS) ./ch13/sample-codes/01.main.cpp -o build/ch13-01
 	$(CC) $(CFLAGS) ./ch13/sample-codes/02.main.cpp -o build/ch13-02
-	$(CC) $(CFLAGS) ./ch13/practice-problems/01.main.cpp -o build/ch13-01
+	$(CC) $(CFLAGS) ./ch13/practice-problems/01.main.cpp -o build/pp13-01
 
 ch14:
 	$(CC) $(CFLAGS) ./ch14/sample-codes/01.main.cpp -o build/ch14-01
@@ -82,7 +82,8 @@ ch15:
 	$(CC) $(CFLAGS) ./ch15/sample-codes/02.main.cpp -o build/ch15-02
 
 ch16:
-	$(CC) $(CFLAGS) ./ch15/sample-codes/01.main.cpp -o build/ch15-01
+	$(CC) $(CFLAGS) ./ch16/sample-codes/01.main.cpp -o build/ch16-01
+	$(CC) $(CFLAGS) ./ch16/practice-problems/01.main.cpp -o build/pp16-01
 
 all: ch02 ch03 ch04 ch05 ch06 ch07 ch08 ch09 ch10 ch11 ch13 ch14 ch15 ch16
 
