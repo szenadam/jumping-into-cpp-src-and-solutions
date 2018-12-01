@@ -1,7 +1,7 @@
 CC=g++
 CFLAGS=-W -Werror -Wall
 
-.PHONY: ch02 ch03 ch04 ch05 ch06 ch07 ch08 ch09 ch10 ch11 ch13 ch14 all clean
+.PHONY: ch02 ch03 ch04 ch05 ch06 ch07 ch08 ch09 ch10 ch11 ch13 ch14 ch15 all clean
 
 ch02:
 	$(CC) $(CFLAGS) ./ch02/practice-problems/01.main.cpp -o build/pp02-01
@@ -77,7 +77,10 @@ ch13:
 ch14:
 	$(CC) $(CFLAGS) ./ch14/sample-codes/01.main.cpp -o build/ch14-01
 
-all: ch02 ch03 ch04 ch05 ch06 ch07 ch08 ch09 ch10 ch11 ch13 ch14
+ch15:
+	$(CC) $(CFLAGS) ./ch15/sample-codes/01.main.cpp -o build/ch15-01
+
+all: ch02 ch03 ch04 ch05 ch06 ch07 ch08 ch09 ch10 ch11 ch13 ch14 ch15
 
 clean:
 	rm -f build/*
