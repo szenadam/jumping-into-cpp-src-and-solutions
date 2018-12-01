@@ -79,6 +79,7 @@ ch14:
 
 ch15:
 	$(CC) $(CFLAGS) ./ch15/sample-codes/01.main.cpp -o build/ch15-01
+	$(CC) $(CFLAGS) ./ch15/sample-codes/02.main.cpp -o build/ch15-02
 
 all: ch02 ch03 ch04 ch05 ch06 ch07 ch08 ch09 ch10 ch11 ch13 ch14 ch15
 
